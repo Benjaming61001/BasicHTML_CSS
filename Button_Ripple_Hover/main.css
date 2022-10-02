@@ -13,10 +13,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #101010;
+    background: #1a2b34;
 }
 
-button {
+button, .link {
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -24,11 +24,13 @@ button {
     margin: 50px 0;
     padding: 12px 36px;
     border-radius: 1000px;
-    font: 600 36px 'Poppins';
     letter-spacing: 2px;
+    font: 600 36px 'Poppins';
+    transition: all .2s;
 }
 
-button:nth-child(1) {
+
+button:nth-child(1), .link {
     background: linear-gradient(
         #005999, #006cb9
     );
@@ -38,6 +40,10 @@ button:nth-child(2) {
     background: linear-gradient(
         #006cb9, #005999
     );
+}
+
+button:hover, .link:hover {
+    transform: translateY(5px) scale(1.2);
 }
 
 span {
@@ -58,8 +64,8 @@ span {
     }
 
     to {
-        width: 500px;
-        height: 500px;
+        width: 50vh;
+        height: 50vh;
         opacity: 0;
     }
     
