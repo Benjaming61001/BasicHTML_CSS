@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font: 600 16px 'Poppins';
 }
 
 .container {
@@ -24,6 +24,7 @@ body {
 
 .cells {
     display: flex;
+    cursor: pointer;
 }
 
 .cell {
@@ -34,6 +35,12 @@ body {
     width: 100px;
     height: 100px;
     border: 1px solid black;
+    transition: all ease .33s;
+}
+
+.cell:hover {
+    background-color: rgba(255, 127, 80, .5);
+    
 }
 
 .score {
