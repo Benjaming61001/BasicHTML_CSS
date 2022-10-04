@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+}
+
+.gameField {
+    width: 300px;
+    height: 300px;
+}
+
+.cells {
+    display: flex;
+}
+
+.cell {
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    font-size: 20px;
+}
+
+.restart,
+.clear {
+    width: 150px;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+
+.restart:hover,
+.clear:hover {
+    background-color: coral;
+    color: white;
+    border: 1px solid white;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 20px 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 100px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+    color: black;
+    letter-spacing: 2px;
+    font: 600 16px 'Poppins';
+    text-decoration: none;
+    transition: all ease .5s;
+}
+
+.link:hover {
+    background-color: coral;
+    color: white;
+    border: 1px solid white;
+    box-shadow: none;
+    text-decoration: underline;
+}
