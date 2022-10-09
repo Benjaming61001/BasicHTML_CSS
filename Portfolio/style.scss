@@ -1,161 +1,191 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --red: #ea5e5e;
-    --yellow: #f7ba3e;
-    --blue: #56b3b4;
-    --purple: #bf85bf;
-    --background: #1a2b34;
-    --gray: #334651;
+  --red: #ea5e5e;
+  --yellow: #f7ba3e;
+  --blue: #56b3b4;
+  --purple: #bf85bf;
+  --background: #1a2b34;
+  --gray: #334651;
 
-    --bg: rgb(28,28,28);
-    --bgLight: rgb(48,48,48);
-    --linearRY: linear-gradient(
-        45deg, var(--red), var(--yellow)
-    );
+  --bg: rgb(28, 28, 28);
+  --bgLight: rgb(48, 48, 48);
+  --linearRY: linear-gradient(90deg, var(--red), var(--yellow));
 
-    --headerHeight: 70px;
-    --footerHeight: 30px;
+  --headerHeight: 70px;
+  --footerHeight: 30px;
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    font: 600 16px 'Poppins';
-    color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-width: 320px;
+  font: 600 16px 'Poppins';
+  background: var(--linearRY);
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    width: 100%;
+    height: var(--headerHeight);
+    background: var(--bg);
+    margin-bottom: auto;
+    z-index: 2;
+
+    .title {
+      position: absolute;
+      padding-left: 24px;
+      font-size: 60px;
+      top: -57px;
+      cursor: default;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-left: 25%;
+      margin-right: 24px;
+
+      .btn {
+        width: auto;
+        margin: 0 10px;
+        background: none;
+        color: white;
+        border: none;
+        font-size: 24px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: ease-in 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn:hover,
+      .btn:focus {
+        transform: translateY(-3px);
+      }
+
+      .btn::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background: var(--red);
+        transition: ease-in 0.3s;
+        z-index: -1;
+      }
+
+      .btn:hover::before,
+      .btn:focus::before {
+        height: 100%;
+      }
+
+      b {
+        cursor: default;
+      }
+    }
+  }
+
+  .main {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+
+    .main-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 128px;
+      transition: 0.5s;
+      cursor: default;
+    }
+
+    .main-content:hover {
+      background: var(--background);
+    }
+  }
+
+  .footer {
+    margin-top: auto;
+    height: var(--footerHeight);
+    width: 100%;
+    background: var(--bg);
     display: flex;
-    flex-direction: column;
-    
+    align-items: center;
+    justify-content: end;
+
+    p {
+      margin-right: 24px;
+    }
+  }
+}
+
+@media (orientation: portrait), (max-width: 900px) {
+  body {
     .header {
-        height: var(--headerHeight);
-        background: var(--bg);
+      .title {
+        font-size: 30px;
+        top: 0px;
+      }
 
-        .title {
-            position: absolute;
-            padding-left: 24px;
-            font-size: 60px;
-            top: -57px;
-            cursor: default;
+      .container {
+        .btn {
+          font-size: 12px;
         }
-
-        .container {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-left: 25%;
-            margin-right: 24px;
-
-            .btn {
-                width: auto;
-                margin:0 10px;
-                background: none;
-                color: white;
-                border: none;
-                font-size: 24px;
-                font-weight: 800;
-                cursor: pointer;
-                transition: ease-in .3s;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .btn:hover, .btn:focus {
-                transform: translateY(-3px);
-            }
-
-            .btn::before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 0%;
-                background: var(--red);
-                transition: ease-in .3s;
-                z-index: -1;
-            }
-
-            .btn:hover::before ,.btn:focus::before {
-                height: 100%;
-            }
-
-            b {
-                cursor: default;
-            }
-        }
+      }
     }
 
     .main {
-        position: relative;
-        width: auto;
-        height: 100%;
-        background: var(--linearRY);
-        .container {
-            position: relative;
-            width: auto;
-            height: auto;
-            padding: 24px;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-auto-rows: minmax(100px, auto);
-            gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
 
-            .main-content {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 128px;
-                transition: .5s;
-                cursor: default;
-            }
-
-            .main-content:hover{
-                background: var(--background);
-            }
-        }
+      .main-content {
+        font-size: 64px;
+      }
     }
-
-    .footer {
-        margin-top: auto;
-        height: var(--footerHeight);
-        width: 100%;
-        background: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: end;
-
-        p {
-            margin-right: 24px;
-        }
-    }
+  }
 }
 
-@media (max-width: 900px) {
-    body {
-        .header {
-            .title {
-                font-size: 30px;
-                top: 0px;
-            }
-            .container {
-                .btn {
-                    font-size: 12px;
-                }
-            }
-        }
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-        .main {
-            grid-template-columns: repeat(3, 1fr);
+      .title {
+        padding: 0px;
+        font-size: 60px;
+        top: -57px;
+      }
 
-            .main-content {
-                font-size: 64px;
-            }
-        }
+      .container {
+        opacity: 0;
+      }
     }
+
+    .main {
+      grid-template-columns: repeat(1, 1fr);
+
+      .main-content {
+        font-size: 64px;
+      }
+    }
+  }
 }
