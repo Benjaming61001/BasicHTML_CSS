@@ -1,0 +1,88 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(228, 228, 228);
+    color: #5d5d5d;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.topBar {
+    width: 100%;
+    max-width: 450px;
+    background: #1ec3ff;
+    margin: 0 0 45px 0;
+    height: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.container {
+    background-color: #fff;
+    width: 100%;
+    margin: 50px auto 50px;
+    max-width: 450px;
+    padding: 0 55px 55px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.006);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.top input {
+    width: 350px;
+    padding: 13px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+    font-size: 1.2rem;
+    background: #fff;
+}
+
+.top .btn-add {
+    width: 50px;
+    border-radius: 50%;
+    background: #fff;
+    color: black;
+    border: 1px solid #dbdbdb;
+    transition: .3s;
+}
+
+.top .btn-add:hover {
+    background-color: #2ccc8f;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.014);
+}
+
+.top .btn-add:active {
+    transform: scale(.9);
+}
+
+.btn-remove {
+    width: 25px;
+    height: 25px;
+    background-color: #1ec3ff;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    transition: .3s;
+}
+
+.btn-remove:hover {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.btn-remove:active {
+    transform: scale(.9);
+}
