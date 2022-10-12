@@ -47,6 +47,7 @@ body {
       font-size: 60px;
       top: -57px;
       cursor: default;
+      pointer-events: none;
       filter: drop-shadow(0 5px 5px #3cb3c3);
       overflow: hidden;
     }
