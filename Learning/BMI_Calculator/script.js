@@ -14,17 +14,17 @@ function calculate() {
     let res = document.querySelector("div#res");
 
     if (bmi < 18.5) {
-        diagnosis = "1";
+        diagnosis = "Underweight";
     } else if (bmi <= 24.9) {
-        diagnosis = "2";
+        diagnosis = "Healthy Weight";
     } else if (bmi < 29.9) {
-        diagnosis = "3";
+        diagnosis = "Overweight";
     } else if (bmi < 34.9) {
-        diagnosis = "4";
+        diagnosis = "Obesity level 1";
     } else if (bmi < 39.9) {
-        diagnosis = "5";
+        diagnosis = "Obesity level 2";
     } else {
-        diagnosis = "6";
+        diagnosis = "Obesity level 3";
     }
 
     res.innerHTML = `<p class="result">Your BMI is: <b>${bmi.toFixed(2)}</b></p>
