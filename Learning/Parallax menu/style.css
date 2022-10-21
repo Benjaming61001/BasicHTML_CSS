@@ -74,3 +74,7 @@ body {
 #menu[data-active-index="3"] > #menu-background-pattern {
     background-position: 0% -100%;
 }
+
+#menu[data-active-index="4"] > #menu-background-pattern {
+    background-position: 0% -125%;
+}
