@@ -6,7 +6,8 @@ const clear = document.querySelector('.clear')
 const negative = document.querySelector('.negative')
 const percent = document.querySelector('.percent')
 
-let firstValue = ''
+let inputValue = ''
+let firstValue = 0
 let isFirstValue = false
 let secondValue = ''
 let isSecondValue = false
@@ -27,32 +28,58 @@ for (let i = 0; i < numbers.length; i++) {
 
 function getFirstValue(el) {
   result.innerHTML = ''
-  firstValue += el
+  if (firstValue == 0) {
+    firstValue = el
+  } else {
+    firstValue += el
+  }
   result.innerHTML = firstValue
   firstValue = +firstValue
+  inputValue = firstValue
 }
 
 function getSecondValue(el) {
   if (firstValue != '' && sign != '') {
-    secondValue += el
+    if (secondValue == 0) {
+      secondValue = el
+    } else {
+      secondValue += el
+    }
     result.innerHTML = secondValue
     secondValue = +secondValue
+    inputValue = secondValue
   }
 }
 
 function getSign() {
   for (let i = 0; i < signs.length; i++) {
     signs[i].addEventListener('click', (e) => {
+      if (secondValue != '') {
+        equal()
+      }
+
       sign = e.target.getAttribute('value')
       isFirstValue = true
       secondValue = ''
+
+      console.log(firstValue)
+      console.log(sign)
     })
   }
 }
 getSign()
 
-equals.addEventListener('click', () => {
+function equal() {
+  if (firstValue == 0) {
+    if (sign == '' && inputValue == '') {
+      console.log('equal zero')
+      return
+    }
+  }
   result.innerHTML = ''
+  if (secondValue == '') {
+    secondValue = inputValue
+  }
   if (sign === '+') {
     resultValue = firstValue + secondValue
   } else if (sign === '-') {
@@ -61,19 +88,35 @@ equals.addEventListener('click', () => {
     resultValue = firstValue * secondValue
   } else if (sign === '/') {
     resultValue = firstValue / secondValue
+  } else {
+    resultValue = firstValue
   }
+
+  console.log(inputValue)
+  console.log('=')
+  console.log(resultValue)
+
+  if (resultValue == 0) {
+    reset()
+  }
+
   result.innerHTML = resultValue
   firstValue = resultValue
+  isFirstValue = true
   secondValue = ''
 
   checkResultLength()
+}
+
+equals.addEventListener('click', () => {
+  equal()
 })
 
 function checkResultLength() {
   resultValue = JSON.stringify(resultValue)
 
   if (resultValue.length >= 8) {
-    resultValue = JSON.parse(result)
+    resultValue = JSON.parse(resultValue)
     result.innerHTML = resultValue.toFixed(5)
   }
 }
@@ -104,15 +147,24 @@ percent.addEventListener('click', () => {
   }
 
   result.innerHTML = resultValue
+
+  console.log(resultValue)
 })
 
-clear.addEventListener('click', () => {
+function reset() {
   result.innerHTML = 0
 
-  firstValue = ''
-  isFirstValue = false
   secondValue = ''
   isSecondValue = false
-  sign = ''
   resultValue = 0
+
+  console.log('clear')
+}
+
+clear.addEventListener('click', () => {
+  inputValue = ''
+  firstValue = ''
+  isFirstValue = false
+  sign = ''
+  reset()
 })
