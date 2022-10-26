@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 400px;
+  color: white;
+  font-size: 144px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-bottom: 5px solid #1c1c1e;
+}
+
+.buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+.mainStartBtn {
+  border-radius: 50%;
+  border: 5px solid #092911;
+  padding: 9px;
+  transition: 0.3s;
+}
+
+.startBtn {
+  background-color: #092911;
+  color: #176427;
+  border: none;
+}
+
+.mainLapBtn {
+  border-radius: 50%;
+  border: 5px solid #1c1c1e;
+  padding: 9px;
+  transition: 0.3s;
+}
+
+.lapResetBtn {
+  background-color: #1c1c1e;
+  color: white;
+  border: none;
+}
+
+.mainStartBtn:hover,
+.mainLapBtn:hover {
+  border: 5px solid rgb(128, 128, 128);
+}
+
+.timerStarted {
+  background-color: #340e0b;
+  color: #bc3d43;
+}
+
+.timerStartedMain {
+  border: 5px solid #340e0b;
+}
+
+.lap {
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+  font-size: 60px;
+  color: white;
+}
+
+a {
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
